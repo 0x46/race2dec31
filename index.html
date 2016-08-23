@@ -15,6 +15,22 @@
     <![endif]-->
   </head>
   <body>
+  	
+	<script>
+		var difficulty = 'normal';
+		(function(){
+			var redirect = sessionStorage.redirect;
+			delete sessionStorage.redirect;
+			if (redirect && redirect != location.href) {
+				history.replaceState(null, null, redirect);
+				if(redirect == 'https://0x46.github.io/race2dec31/difficulty:impossible'){
+					difficulty = 'hard';
+				}else{
+					window.location.href = '/';
+				}
+			}
+		})();
+	</script>
   
     <div class="container">
 		<div class="row">
@@ -106,8 +122,8 @@
 							Difficulty <span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
-							<li><a href="/">Normal</a></li>
-							<li><a href="/difficulty:impossible">Impossible</a></li>
+							<li><a href="/race2dec31">Normal</a></li>
+							<li><a href="/race2dec31/difficulty:impossible">Impossible</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -182,8 +198,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
-	<script src="/assets/utility.js"></script>
-	<script src="/assets/game-normal.js"></script>
+	<script src="/assets/game-always.js"></script>
+	<script>document.write('<script src="/assets/game-'+difficulty+'.js"></script>');</script>
 	
   </body>
 </html>
