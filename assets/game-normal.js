@@ -1,3 +1,19 @@
+/* Game Logic */
+
+if(Math.round(Math.random())){
+	var game = {
+	state: 'running',
+	active: 'bot',
+	turn: 0,
+	latest: {
+		day: 1,
+		month: 1
+	},
+	history: []
+};
+
+	botTurn();
+}else{
 var game = {
 	state: 'running',
 	active: 'player',
@@ -9,10 +25,7 @@ var game = {
 	history: []
 };
 
-
-/* Game Logic */
-
-if(Math.round(Math.random())) botTurn();
+}
 
 function botTurn(){
 
