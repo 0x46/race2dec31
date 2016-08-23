@@ -12,6 +12,7 @@ var game = {
 
 /* Game Logic */
 
+if(Math.round(Math.random())) botTurn();
 
 function botTurn(){
 
@@ -31,7 +32,7 @@ function botTurn(){
 			month = game.latest.month;
 		}else{
 			// 50% chance to change day, 50% for month
-			if(Math.random() > 0.5){
+			if(Math.round(Math.random())){
 				day = game.latest.day;
 			}else{
 				month = game.latest.month;
