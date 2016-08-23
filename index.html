@@ -17,14 +17,17 @@
   <body>
   	
 	<script>
-		var difficulty = 'normal';
+		var difficulty = 'Normal';
 		(function(){
 			var redirect = sessionStorage.redirect;
 			delete sessionStorage.redirect;
 			if (redirect && redirect != location.href) {
 				history.replaceState(null, null, redirect);
 				if(redirect == 'https://0x46.github.io/race2dec31/difficulty:impossible'){
-					difficulty = 'hard';
+					difficulty = 'Impossible';
+				}else if(redirect == 'https://0x46.github.io/race2dec31/difficulty:normal'){
+				}else if(redirect == 'https://0x46.github.io/race2dec31/difficulty:easy'){
+					difficulty = 'Easy';
 				}else{
 					window.location.href = '/';
 				}
@@ -118,11 +121,12 @@
 					<li><a data-toggle="modal" data-target="#how-to-play" href="#how-to-play">How To Play</a></li>
 					<li><a data-toggle="modal" data-target="#about" href="#about">About</a></li>
 					<li role="presentation" class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-							Difficulty <span class="caret"></span>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#choose-difficulty" role="button" aria-haspopup="true" aria-expanded="false">
+							Difficulty: <span id="currDiff"></span> <span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
-							<li><a href="/race2dec31">Normal</a></li>
+							<li><a href="/race2dec31/difficulty:easy">Easy</a></li>
+							<li><a href="/race2dec31/difficulty:normal">Normal</a></li>
 							<li><a href="/race2dec31/difficulty:impossible">Impossible</a></li>
 						</ul>
 					</li>
