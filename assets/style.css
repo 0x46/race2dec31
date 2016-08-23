@@ -5,6 +5,7 @@ html {
 body {
   margin-bottom: 60px;
 }
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -13,7 +14,10 @@ body {
   background-color: #f5f5f5;
   padding: 20px;
 }
-
+.footer .glyphicon {
+	color:	#000;
+	margin-right: 5px;
+}
 
 .well {
 	max-height: 50%;
